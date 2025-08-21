@@ -388,6 +388,42 @@ footer {
     .social-float {
         display: none;
     }
+    
+    /* WhatsApp only for mobile */
+    .whatsapp-mobile {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1000;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #25d366;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .whatsapp-mobile:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+    
+    .whatsapp-mobile svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+    }
+}
+
+@media (min-width: 769px) {
+    .whatsapp-mobile {
+        display: none;
+    }
 }
 
 /* Smooth scrolling */
