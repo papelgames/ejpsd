@@ -83,3 +83,23 @@ window.addEventListener('scroll', function() {
         header.style.background = 'rgba(255, 255, 255, 0.95)';
     }
 });
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const wasActive = faqItem.classList.contains('active');
+        
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Open clicked item if it wasn't active
+        if (!wasActive) {
+            faqItem.classList.add('active');
+        }
+        
+        // Track FAQ interactions
+        trackEvent('faq_click', 'engagement');
+    });
+});
